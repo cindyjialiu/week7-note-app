@@ -12,3 +12,11 @@ function testaddNote(){
   assert.isTrue(note.showText() === "shopping list");
 };
   testaddNote();
+
+function testcreateNote(){
+  var note = new Note("javascript is weird")
+  var noteList = new NoteList()
+  noteList.createNote(note)
+  assert.isTrue(note.text === "javascript is weird");
+};
+  testcreateNote();
