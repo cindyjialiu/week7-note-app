@@ -5,10 +5,9 @@ function testNoteDefaultsToHi(){
 
   testNoteDefaultsToHi();
 
-
 function testshowText(){
   var note = new Note("Hello");
-  assert.isTrue(note.text === "Hello");
+  assert.isTrue(note.showText() === "Hello");
 };
 
   testshowText();
