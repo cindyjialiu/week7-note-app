@@ -1,22 +1,18 @@
 function testNoteListDefaultIsEmpty(){
-  var noteList1 = new NoteList();
-  assert.isTrue(noteList1.list.length === 0);
+  var noteList = new NoteList();
+  assert.isTrue(noteList.list.length === 0);
 };
   testNoteListDefaultIsEmpty();
 
 function testaddNote(){
-  var note = new Note("shopping list")
-  var noteList2 = new NoteList()
-  console.log(noteList2);
-  console.log(noteList2.addNote(note));
-  assert.isTrue(note.showText() === "shopping list");
+  var note = new Note();
+  var noteList = new NoteList();
+  assert.isTrue(noteList.addNote(note).list[0] === note);
 };
   testaddNote();
 
 function testcreateNote(){
-  var note = new Note("javascript is weird")
-  var noteList = new NoteList()
-  noteList.createNote(note)
-  assert.isTrue(note.text === "javascript is weird");
+  var noteList = new NoteList();
+  assert.isTrue(noteList.createNote("hi").list[0].text === "hi");
 };
   testcreateNote();
