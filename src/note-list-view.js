@@ -28,8 +28,16 @@
   NoteListView.prototype.viewNoteList = function () {
     return "<ul>" + this.noteList.map(function(note){
       console.log(note.showId);
-      return "<li><div><a href='note#'" + note.showId + ">" + trim(note.text) + "</a></div></li>"
+      return "<li><div><a href='#" + note._id + "'" + ">" + trim(note.text) + "</a></div></li>"
     }).join("") + "</ul>"
+
+  };
+
+  NoteListView.prototype.viewSingleNote = function () {
+    return this.noteList.map(function(note){
+      console.log(note.showId);
+      return "<div id='message" + note._id + "' class='hidden'>" + note.text + "</div>"
+    }).join("") 
 
   };
 

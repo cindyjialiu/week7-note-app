@@ -10,15 +10,43 @@
       <script src="src/note-controller.js"></script>
       <script src="src/describe.js"></script>
       <script src="src/single-note-view.js"></script>
-
+  <style >
+    .hidden {
+      display: none;
+    }
+  </style>
 
   </head>
   <body>
     <div id="app">hello</div>
+    <div id="message">
+
+    </div>
     <script>
       var emptyNoteList = new NoteList();
       var noteController = new NoteController(emptyNoteList);
       noteController.getHtmlAndInsertIntoApp()
+
+      makeUrlChangeShowAnimalForCurrentPage();
+
+      function makeUrlChangeShowAnimalForCurrentPage() {
+        window.addEventListener("hashchange", showAnimalForCurrentPage);
+      };
+
+      function showAnimalForCurrentPage() {
+        console.log("helo");
+        showAnimal(getAnimalFromUrl(window.location));
+      };
+
+      function getAnimalFromUrl(location) {
+        return location.hash.split("#")[1];
+      };
+
+      function showAnimal(animal) {
+        document
+          .getElementById("message" + animal)
+          .classList.remove("hidden");
+      };
 
     </script>
   </body>

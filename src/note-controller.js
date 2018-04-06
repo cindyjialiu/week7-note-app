@@ -5,21 +5,13 @@
     element.innerHTML = newText
     }
 
-  // window.onload = function(){
-  //   changeText("howdy")
-  // };
-  //
-  //
-  // function noteController(){
-  //   var note = new Note("Favourite drink: seltzer");
-  //   var emptyNoteList = new NoteList();
-  //   var updatedNoteList = emptyNoteList.addNote(note);
-  //   var noteListView = new NoteListView(updatedNoteList.list);
-  //   var html = noteListView.viewNoteList();
-  //   changeText(html);
-  // }
+  function changeMessage(newText){
+    var element = document.getElementById('message');
+    element.innerHTML = newText
+    }
 
   exports.changeText = changeText;
+  exports.changeMessage = changeMessage;
 })(this);
 
 (function(exports){
@@ -31,8 +23,11 @@
   }
 
   NoteController.prototype.getHtmlAndInsertIntoApp = function () {
-    var html = this.noteListView.viewNoteList();
-    changeText(html)
+    var apps = this.noteListView.viewNoteList();
+    changeText(apps)
+    var messages = this.noteListView.viewSingleNote();
+    changeMessage(messages)
   }
+
   exports.NoteController = NoteController;
 })(this)
