@@ -7,25 +7,19 @@
       <script src="src/note-list.js"></script>
       <script src="src/note-list-view.js"></script>
       <script src="src/assert.js"></script>
-      <script src="note-controller.js"></script>
+      <script src="src/note-controller.js"></script>
       <script src="src/describe.js"></script>
       <script src="src/single-note-view.js"></script>
 
-      <script src="test/note-test.js"></script>
-      <script src="test/note-list-test.js"></script>
-      <script src="test/note-list-view-test.js"></script>
 
   </head>
   <body>
     <div id="app">hello</div>
-    <a href= ""><script>
-      var note = new Note("Favourite drink: seltzer");
+    <script>
       var emptyNoteList = new NoteList();
-      var updatedNoteList = emptyNoteList.addNote(note);
-      var noteListView = new NoteListView(updatedNoteList.list);
-      var html = noteListView.viewNoteList();
-      changeText(html)
+      var noteController = new NoteController(emptyNoteList);
+      noteController.getHtmlAndInsertIntoApp()
 
-    </script></a>
+    </script>
   </body>
 </html>

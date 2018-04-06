@@ -27,7 +27,8 @@
 
   NoteListView.prototype.viewNoteList = function () {
     return "<ul>" + this.noteList.map(function(note){
-      return "<li><div>" + trim(note.text) + "</div></li>"
+      console.log(note.showId);
+      return "<li><div><a href='note#'" + note.showId + ">" + trim(note.text) + "</a></div></li>"
     }).join("") + "</ul>"
 
   };
