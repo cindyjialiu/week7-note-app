@@ -13,7 +13,7 @@ $ npm install note
 ```js
 const note = require('note');
 
-// your code here
+// your code here, need to update
 
 ```
 
